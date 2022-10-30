@@ -1,0 +1,103 @@
+
+* {
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%; 
+    /* 16px e denk geliyor */
+}
+
+body{
+    font-size: 1.4rem;
+    margin: 0;
+    font-family: 'Lato',sans-serif ;
+}
+.row {
+    margin-bottom: 40px;
+}
+
+/* rowu float ile böldüğümüz için clearfix vermeliyiz. Row kapsayıcı eleman olduğundan clearfixi rowdan sonra verebiliriz */
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col-3 {
+    float: left;
+    width: 33.3%;
+}
+
+.col-2 {
+    float: left;
+    width: 50%;
+}
+
+/* 768px altında olunca yan yana olan divler alt alta gelir */
+@media (max-width:768px){
+    .col-2 , .col-3 {    /* Yada şöyle [class*="col-"] şeklinde de tanımlanabilir. Col ile başlayanları al demek.  */
+        width: 100%;
+    }
+}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* formu bir container içine aldık ve sayfayı kapladığı zaman sağdan soldan padding verdik */
+.container {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.img-fluid {
+    width: 100%;
+}
+@media (min-width: 576px) {
+    html{
+        font-size: 68%; 
+    }
+    /* container ile her boyuta verilen özellikler tarayıcının büyüklüğüne göre containerın sağdan soldan boşluk bırakmasını sağlar */
+    .container {
+        margin: 0 auto;
+        width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    html{
+        font-size: 72%; 
+    }
+    .container {
+        margin: 0 auto;
+        width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    html{
+        font-size: 74%; 
+    }
+    .container {
+        margin: 0 auto;
+        width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    html{
+        font-size: 78%; 
+    }
+    .container {
+        margin: 0 auto;
+        width: 1140px;
+    }
+}
+@media (min-width: 1400px) {
+    html{
+        font-size: 82%; 
+    }
+    .container {
+        margin: 0 auto;
+        width: 1320px;
+    }
+}

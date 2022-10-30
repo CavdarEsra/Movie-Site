@@ -1,0 +1,71 @@
+.signup-page{
+    padding-top: 60px;
+}
+.signup-title{
+    text-align: center;
+    font-size: 30px;
+    color: darkblue;
+}
+.signup-form{
+    width: 100%;
+}
+
+/* form normalde 500px ama 768 den az olunca sayfanın genişliğine sığdırılır  */
+@media (min-width: 768px){
+    .signup-form{
+        width: 500px;
+        margin: auto;
+    }
+}
+
+/* formdaki elemanlar satırı kaplar yani alt alta yazar */
+.signup-form label,
+.signup-form input:not([type="checkbox"]),  /* bütün inputlardan tipi checkbox olan haricindekilerine uygula demek */
+.signup-form select{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* label ile checboxı yan yana getirmek için */
+.signup-form input[type="checkbox"] ,
+.signup-form input[type="checkbox"] + label {      /* checboxtan sonra gelen ilk label */
+
+    display: inline-block;
+    width: auto;
+    margin-top: 15px;
+}
+.signup-form button[type="submit"]{
+    /* tipi submit olan butonlar */
+    display: block;
+    margin-top: 15px;
+}
+.signup-form input:not([type="checkbox"]),
+.signup-form select{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+/* inputlardan checkbox hariç tıkladığımızda(focus olduğunda) rengi değişir */
+.signup-form input:not([type="checkbox"]):focus,
+.signup-form select:focus{
+    outline: none;
+    background-color: #fc997c;
+    border: 1px solid rgb(224, 24, 91);
+}
+.signup-form input[type="checkbox"]{
+    appearance: none;        /* tarayıcının uyguladığı özellikleri kapatır */
+    width: 20px;
+    height: 20px;
+    border: 1px solid #2e4c6d;
+    vertical-align: bottom;   /* biraz aşağıya alır */    
+    border-radius: 50%;
+}
+/* checkboxın üstüne gelince */
+.signup-form input[type="checkbox"]:hover{
+    background-color: gray;
+}
+/* checkbox seçildiğinde */
+.signup-form input[type="checkbox"]:checked{
+    background-color: #fc997c;
+}
