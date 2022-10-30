@@ -1,2 +1,2 @@
-# web--rnek1
+# web-ornek1
 Web site örnek1(movieapp)
